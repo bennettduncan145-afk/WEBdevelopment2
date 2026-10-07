@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>MovieJack Terms</title>
+</head>
+
+<body>
+
+    <h1>MovieJack</h1>
+
+    <h2>Terms and Conditions</h2>
+
+    <p>
+        By clicking Agree, you confirm that you accept the terms and
+        conditions of MovieJack.
+    </p>
+
+    <button onclick="agree()">Agree</button>
+    <button onclick="deny()">Deny</button>
+
+    <script>
+        function agree() {
+            alert("Thank you for agreeing to the terms and conditions of MovieJack. Enjoy your experience!");
+
+            let signaturetext = document.getElementById("siginput").value;
+            localStorage.setItem("signature", signaturetext);
+
+            window.location.href = "TonglaSite.html";
+        }
+
+        function deny() {
+            alert("You have chosen not to agree to the terms and conditions of MovieJack.");
+
+            window.location.href = "https://www.google.com";
+        }
+    </script>
+
+    <section>
+        <h2>Signature info please</h2>
+
+        <input id="siginput" type="text" placeholder="Enter Signature!" oninput="update()">
+
+        <p id="Signature">Your signature will appear here.</p>
+        <script>
+            function update() {
+                let signaturetext = document.getElementById("siginput").value;
+                let valofsig = document.getElementById("siginput").value;
+
+                document.getElementById("Signature").innerText = "Your signature is: " + valofsig;
+            }
+        </script>
+    </section>
+
+</body>
+</html>

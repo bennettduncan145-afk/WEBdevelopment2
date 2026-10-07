@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>MovieJack</title>
+
+<style>
+    .button{
+            padding: 10px;
+            background-color: rgb(158, 108, 0);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .textbox {
+            width: 400px;
+            padding: 16px 20px;
+
+            background-color: rgb(55, 30, 10);
+            color: rgb(255, 220, 170);
+
+            border: 3px solid rgb(158, 108, 0);
+            border-radius: 12px;
+
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+
+            outline: none;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+            transition: 0.2s;
+        }
+
+        .textbox:focus {
+            border-color: rgb(255, 150, 30);
+            box-shadow: 0 0 12px rgba(255, 150, 30, 0.5);
+        }
+
+        .textbox::placeholder {
+            color: rgb(190, 140, 90);
+        }
+
+        .section {
+            margin: 40px auto;
+            padding: 35px;
+
+            width: 80%;
+            max-width: 900px;
+
+            background: linear-gradient(
+            135deg,
+            rgb(45, 25, 10),
+            rgb(85, 45, 10)
+        );
+
+        border: 2px solid rgb(158, 108, 0);
+        border-radius: 18px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+        color: rgb(255, 230, 190);
+
+        text-align: center;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #111;
+    }
+
+    .header {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .header h2 {
+        color: black;
+        margin: 0;
+    }
+
+    footer {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+    .intro {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(158, 108, 0);
+        text-align: left;
+        border: 2px solid rgb(125, 125, 125);
+        border-radius: 4px;
+        margin: 20px;
+    }
+
+    .moviesites {
+        padding: 20px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(158, 108, 0);
+        text-align: left;
+        border: 2px solid rgb(125, 125, 125);
+        border-radius: 4px;
+        margin: 20px;
+    }
+
+    .section {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 251, 9, 0.8);
+        text-align: left;
+        border: 2px solid rgb(125, 125, 125);
+        border-radius: 4px;
+        box-shadow: 5px 4px 10px rgba(198, 194, 117, 0.5);
+        margin: 10px;
+    }
+
+    .reviewsStar {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(229, 255, 0, 0.8);
+        text-align: left;
+        border: 2px solid rgb(125, 125, 125);
+        border-radius: 4px;
+        box-shadow: 7px 7px 19px rgba(198, 194, 117, 0.5);
+        margin-top: 10px;
+    }
+
+    select {
+        width: 200px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #555;
+        border-radius: 8px;
+        background-color: #222;
+        color: white;
+        cursor: pointer;
+    }
+
+    select:hover {
+        border-color: orange;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: orange;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <script>
+        console.log("Starting web program source code for MovieJack");
+    </script>
+
+<p style="font-size: 13px;">
+    <a
+        href="https://www.youtube.com/@BennettDuncan_Emmo/shorts"
+        target="_blank">
+        Check out my Youtube channel to know more about website dev
+    </a>
+</p>
+
+<h2>MovieJack FILMS <a href="#">Settings</a> <a href="#">Home</a>
+
+<select class="select" onchange="window.location.href = this.value">
+    <option value="settings.html">Settings</option>
+    <option value="new-features.html">New features</option>
+    <option value="why-this-site.html">Why this site?</option>
+    <option value="Agreement.html">Agreements</option>
+</select>
+
+</h2>
+
+</div>
+
+<div class="intro">
+
+<p>▪️ Welcome to our film review site!</p>
+
+<p>▪️ We review the latest movies and provide insights for movie lovers.</p>
+
+<p>▪️ In this website you can find reviews, costs, cinemas, movie apps, and movie trailers opened by YouTube for the latest movies.</p>
+
+<p>▪️ Enjoy your stay on this website!</p>
+
+</div>
+
+<!-- SIGNATURE -->
+
+<div class="section">
+
+    <h2 id="savedSignature">Signed by: </h2>
+
+</div>
+
+<script>
+    let signature = localStorage.getItem("signature");
+
+    if (signature) {
+        document.getElementById("savedSignature").innerText =
+            "Signed by: " + signature;
+    }
+</script>
+
+<!-- END SIGNATURE -->
+
+
+<div class="moviesites">
+
+<p>▪️ Check out the public movie review sites first:</p>
+
+<ul>
+
+    <li>
+        <a href="https://www.rottentomatoes.com/" target="_blank">
+            Rotten Tomatoes
+        </a>
+    </li>
+
+    <li>
+        <a href="https://www.imdb.com/" target="_blank">
+            IMDb
+        </a>
+    </li>
+
+    <li>
+        <a href="https://www.metacritic.com/" target="_blank">
+            Metacritic
+        </a>
+    </li>
+
+    <li>
+        <a href="https://letterboxd.com/" target="_blank">
+            Letterboxd
+        </a>
+    </li>
+
+    <li>
+        <a href="https://themoviebox.xyz/" target="_blank">
+            MovieBox
+        </a>
+    </li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>🎬 Upcoming Movies</h3>
+
+<ul>
+    <li>Shrek 5 — 2027</li>
+    <li>Toy Story 5 — 2026</li>
+    <li>Spider-Man: Beyond the Spider-Verse — Upcoming</li>
+    <li>Ice Age: Boiling Point — Upcoming</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h3>Latest Movie Trailers</h3>
+
+<ul>
+
+    <li>
+        <p>Kung Fu Panda 5 (Concept Trailer)</p>
+
+        <a
+            href="https://www.youtube.com/embed/n1DBDfavlQo"
+            target="_blank">
+            Use a link to watch the trailer on YouTube!
+        </a>
+
+    </li>
+
+</ul>
+
+<iframe
+    src="https://www.youtube.com/embed/n1DBDfavlQo"
+    width="560"
+    height="315"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="section">
+
+<ul>
+
+    <li>
+
+        <p>Shrek 5</p>
+
+        <a
+            href="https://www.youtube.com/watch?v=MT6oamBs4Pg"
+            target="_blank">
+            Use a link to watch the trailer on YouTube!
+        </a>
+
+    </li>
+
+</ul>
+
+<iframe
+    src="https://www.youtube.com/embed/MT6oamBs4Pg"
+    width="560"
+    height="315"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="section">
+
+<ul>
+
+    <li>
+
+        <p>Toy Story 5</p>
+
+        <a
+            href="https://www.youtube.com/embed/9q7V5J6J2xU"
+            target="_blank">
+            Use a link to watch the trailer on YouTube!
+        </a>
+
+    </li>
+
+</ul>
+
+<iframe
+    src="https://www.youtube.com/embed/9q7V5J6J2xU"
+    width="560"
+    height="315"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="section">
+
+<h3>Sonic 4</h3>
+
+<p>Trailer coming soon! !!NO LINKS ARE AVAILABLE!!</p>
+
+</div>
+
+<div class="reviewsStar">
+
+<h1>Here are the latest reviews!</h1>
+
+<p>Shrek 5: ⭐⭐⭐⭐☆</p>
+
+<p>Toy Story 5: ⭐⭐⭐⭐⭐</p>
+
+<p>Angry Birds 3: ⭐⭐⭐⭐☆</p>
+
+<p>Kung Fu Panda 5 (concept): ⭐⭐⭐☆☆</p>
+
+</div>
+
+<button class="button" onclick="sayHello()">Click me to say hello!</button>
+
+<script>
+    let count = 0;
+
+    function sayHello() {
+        alert("Hello, welcome to MovieJack!");
+
+        count += 1;
+        console.log("Count: " + count);
+    }
+</script>
+
+<section class="section">
+
+    <h1 id="title">
+        MovieJack - A Simple Web Page
+    </h1>
+
+    <button class="button" onclick="changeTitle()">
+        Click to know, what is MovieJack?
+    </button>
+
+</section>
+
+<script>
+
+    function changeTitle() {
+        let title = document.getElementById("title");
+
+        title.innerText =
+            "MovieJack is a simple web page that provides movie reviews, trailers, and links to popular movie review sites. It is designed to be user-friendly and informative for movie enthusiasts.";
+
+        title.style.color = "rgba(158, 108, 0, 1)";
+
+        console.log("Title changed to: " + title.innerText);
+    }
+
+</script>
+
+<section class="section">
+
+    <input
+        class="textbox"
+        id="nameInput"
+        type="text"
+        placeholder="Enter your name"
+        oninput="ShowText()">
+
+    <script>
+
+        function ShowText() {
+
+            let nid = document.getElementById("nameInput");
+            let dsT = document.getElementById("displayText");
+
+            dsT.innerText = "Hello, " + nid.value + "!";
+
+            console.log("Input element: ", nid.value);
+        }
+
+    </script>
+
+    <h1 id="displayText">Your name here!</h1>
+
+</section>
+
+<section class="section">
+
+    <h1>Movie Search</h1>
+
+    <input
+        class="textbox"
+        id="nameInput2"
+        type="text"
+        placeholder="Enter a movie name! 🔍">
+
+    <button class="button" onclick="Redirect1()">
+        Look for movie on rotton tomatoes!
+    </button>
+
+    <button class="button" onclick="Redirect2()">
+        Look for movie on Moviebox!
+    </button>
+
+    <button class="button" onclick="Redirect3()">
+        Look for movie on Youtube!
+    </button>
+
+    <script>
+
+        let movieName = document.getElementById("nameInput2");
+
+        function Redirect1() {
+            let text = movieName.value;
+
+            window.location.href =
+                "https://www.rottentomatoes.com/results?search_query=" + text;
+        }
+
+        function Redirect2() {
+            let text = movieName.value;
+
+            window.location.href =
+                "https://officialmoviebox.com/results?search_query=" + text;
+        }
+
+        function Redirect3() {
+            let text = movieName.value;
+
+            window.location.href =
+                "https://www.youtube.com/results?search_query=" + text;
+        }
+
+    </script>
+
+</section>
+
+<footer style="margin-top: 13px;">
+
+<p>MovieJack by @BennettDuncan</p>
+
+</footer>
+
+</body>
+</html>
